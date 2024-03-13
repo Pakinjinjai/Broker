@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="mt-10">
+    <HelloWorld class="text-red-600" msg="ยินดีต้อนรับเข้าสู่ : เว็บตรวจสอบสถานะระดับน้ำ" />
   </div>
 </template>
 
