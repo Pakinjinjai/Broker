@@ -1,37 +1,22 @@
 const express = require("express");
-const WebSocket = require("ws");
 const cors = require("cors");
+require("./broker.js");
+// const routes = require("./routes/routes");
 
-// Import MQTT library
-const aedes = require("aedes")();
-const mqttServer = require("net").createServer(aedes.handle);
+const main = async () => {
+  const app = express();
+  app.use(cors());
 
-// Create Express app
-const app = express();
-const PORT = 5000;
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: false }));
 
-// สร้าง WebSocket server ที่พอร์ต 8080
-const wss = new WebSocket.Server({ port: 8080 });
+  const port = 3000;
 
-// เพิ่ม middleware CORS
-app.use(cors());
+  // routes(app);
 
-// เมื่อมีการเชื่อมต่อ WebSocket
-wss.on("connection", function connection(ws) {
-  console.log("WebSocket connected");
-
-  // เมื่อมีข้อมูลถูกส่งมาจาก WebSocket client
-  ws.on("message", function incoming(message) {
-    console.log("Received message from client: %s", message);
+  app.listen(port, () => {
+    console.log("Server is running on port $(port)");
   });
-});
+};
 
-// เริ่มต้น MQTT broker
-mqttServer.listen(1883, () => {
-  console.log("MQTT server listening on port 1883");
-});
-
-// Start the server
-const server = app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+main().catch((e) => console.error(e));
