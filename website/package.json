@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "vue": "^3.2.13",
+    "axios": "^1.5.1",
+    "core-js": "^3.8.3",
+    "dayjs": "^1.11.10",
+    "jsonwebtoken": "^9.0.2",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
@@ -17,6 +21,7 @@
     "@vue/cli-service": "~5.0.0",
     "autoprefixer": "^10.4.18",
     "eslint": "^7.32.0",
+    "mqtt": "^5.3.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",

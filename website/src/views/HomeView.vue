@@ -1,6 +1,6 @@
 <template>
   <div class="mt-10">
-    <HelloWorld class="text-red-600" msg="ยินดีต้อนรับเข้าสู่ : เว็บตรวจสอบสถานะระดับน้ำ" />
+    <HelloWorld class="text-2xl font-bold text-indigo-900" msg="ยินดีต้อนรับเข้าสู่ : เว็บตรวจสอบสถานะระดับน้ำ" />
   </div>
 </template>
 
